@@ -94,6 +94,18 @@ def transform_data(dataframe: pd.DataFrame) -> pd.DataFrame:
 
     return dataframe
 
+def remove_exact_duplicates(
+    dataframe: pd.DataFrame,
+) -> tuple[pd.DataFrame, int]:
+    """Remove exact duplicate rows and return the number removed."""
+
+    original_row_count = len(dataframe)
+
+    dataframe = dataframe.drop_duplicates().reset_index(drop=True)
+
+    removed_row_count = original_row_count - len(dataframe)
+
+    return dataframe, removed_row_count
 
 def validate_clean_data(dataframe: pd.DataFrame) -> None:
     """Run basic validations on the cleaned dataset."""
@@ -140,25 +152,38 @@ def save_clean_data(dataframe: pd.DataFrame) -> Path:
 def main() -> None:
     """Load, clean, validate, and save the ANP dataset."""
 
+    # Find the original CSV file inside data/raw.
     raw_file = find_raw_csv()
 
     print(f"Loading raw dataset: {raw_file.name}")
 
+    # Load the original dataset.
     dataframe = load_raw_data(raw_file)
 
     print(f"Raw rows: {len(dataframe):,}")
 
+    # Rename columns, clean text, convert dates, and convert prices.
     dataframe = transform_data(dataframe)
 
+    # Remove rows where every column is exactly the same.
+    dataframe, removed_duplicates = remove_exact_duplicates(
+        dataframe
+    )
+
+    print(
+        f"Exact duplicate rows removed: "
+        f"{removed_duplicates:,}"
+    )
+
+    # Check whether the cleaned data is valid.
     validate_clean_data(dataframe)
 
+    # Save the cleaned dataset inside data/processed.
     output_path = save_clean_data(dataframe)
 
     print(f"Clean rows: {len(dataframe):,}")
     print(f"Clean columns: {len(dataframe.columns)}")
     print(f"Output file: {output_path}")
     print("Data cleaning completed successfully.")
-
-
 if __name__ == "__main__":
     main()
