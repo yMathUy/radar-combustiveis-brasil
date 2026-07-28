@@ -3,14 +3,18 @@ name: Update Fuel Dashboard
 on:
   workflow_dispatch:
 
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - "src/**"
+      - "requirements.txt"
+      - ".github/workflows/update-dashboard.yml"
+
   schedule:
     - cron: "0 10 * * 1"
       timezone: "America/Sao_Paulo"
-
-permissions:
-  contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: fuel-dashboard
@@ -20,15 +24,20 @@ jobs:
   update-data:
     name: Update dashboard data
     runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    permissions:
+      contents: write
 
     steps:
       - name: Download repository
         uses: actions/checkout@v6
         with:
           ref: main
+          fetch-depth: 0
 
       - name: Configure Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
@@ -36,6 +45,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install pandas requests
+
+      - name: Download ANP data
+        run: |
+          python src/download.py
+
+      - name: Clean ANP data
+        run: |
+          python src/clean_data.py
 
       - name: Generate aggregated CSV files
         run: |
@@ -51,46 +68,75 @@ jobs:
           import json
           from pathlib import Path
 
-          files = [
+          csv_files = [
+              Path("data/aggregated/weekly_national_prices.csv"),
+              Path("data/aggregated/weekly_state_prices.csv"),
+              Path("data/aggregated/weekly_municipality_prices.csv"),
+          ]
+
+          json_files = [
               Path("docs/data/metadata.json"),
               Path("docs/data/latest_national_prices.json"),
               Path("docs/data/latest_state_gasoline_prices.json"),
               Path("docs/data/weekly_national_trends.json"),
           ]
 
-          for file_path in files:
-              if not file_path.exists():
+          for file_path in csv_files:
+              if not file_path.is_file():
                   raise FileNotFoundError(
-                      f"File was not generated: {file_path}"
+                      f"CSV file was not generated: {file_path}"
+                  )
+
+              if file_path.stat().st_size == 0:
+                  raise ValueError(
+                      f"CSV file is empty: {file_path}"
+                  )
+
+              print(f"Validated CSV: {file_path}")
+
+          for file_path in json_files:
+              if not file_path.is_file():
+                  raise FileNotFoundError(
+                      f"JSON file was not generated: {file_path}"
                   )
 
               with file_path.open(
                   "r",
                   encoding="utf-8"
               ) as file:
-                  json.load(file)
+                  content = json.load(file)
 
-              print(f"Validated: {file_path}")
+              if content is None:
+                  raise ValueError(
+                      f"JSON file has no content: {file_path}"
+                  )
+
+              print(f"Validated JSON: {file_path}")
+
+          print("All dashboard files were validated.")
           PY
 
       - name: Commit updated data
         run: |
-          if [ -z "$(git status --porcelain -- docs/data)" ]; then
+          if [ -z "$(git status --porcelain -- data/aggregated docs/data)" ]; then
             echo "No data changes detected."
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email \
-              "41898282+github-actions[bot]@users.noreply.github.com"
-
-            git add docs/data
-            git commit -m "chore: update dashboard data"
-            git push origin main
+            exit 0
           fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/aggregated docs/data
+          git commit -m "chore(data): update ANP dashboard data"
+
+          git pull --rebase origin main
+          git push origin main
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Prepare website
+      - name: Prepare website for publication
         uses: actions/upload-pages-artifact@v4
         with:
           path: docs
@@ -99,6 +145,10 @@ jobs:
     name: Publish dashboard
     needs: update-data
     runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
 
     environment:
       name: github-pages
