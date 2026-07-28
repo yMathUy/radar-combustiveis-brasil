@@ -126,6 +126,7 @@ def create_municipality_summary(
             "state_code",
             "municipality",
             "product",
+            "measurement_unit",
         ],
     )
 
@@ -143,6 +144,7 @@ def create_state_summary(
             "is_partial_week",
             "state_code",
             "product",
+            "measurement_unit",
         ],
     )
 
@@ -159,6 +161,7 @@ def create_national_summary(
             "week_end",
             "is_partial_week",
             "product",
+            "measurement_unit",
         ],
     )
 
