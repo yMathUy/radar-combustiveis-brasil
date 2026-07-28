@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Brazilian fuel price dashboard based on official ANP data."
+    >
+
+    <title>Brazil Fuel Price Radar</title>
+
+    <link
+        rel="stylesheet"
+        href="./styles.css"
+    >
+</head>
+
+<body>
+    <header class="hero">
+        <div class="container">
+            <p class="eyebrow">Official ANP open data</p>
+
+            <h1>Brazil Fuel Price Radar</h1>
+
+            <p class="hero-description">
+                Weekly monitoring of fuel prices collected by
+                Brazil's National Agency of Petroleum,
+                Natural Gas and Biofuels.
+            </p>
+
+            <div class="metadata">
+                <span id="latest-week">
+                    Loading reporting period...
+                </span>
+
+                <span id="generated-at">
+                    Loading update information...
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="dashboard-section">
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">Brazil</p>
+
+                    <h2>National average prices</h2>
+                </div>
+
+                <p>
+                    Most recent complete week available
+                    in the dataset.
+                </p>
+            </div>
+
+            <div
+                id="price-cards"
+                class="price-grid"
+                aria-live="polite"
+            >
+                <p>Loading prices...</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">States</p>
+
+                    <h2>Average gasoline prices</h2>
+                </div>
+
+                <p id="state-ranking-note">
+                    Ranking based on a minimum number
+                    of observations.
+                </p>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>State</th>
+                            <th>Average price</th>
+                            <th>Median</th>
+                            <th>Observations</th>
+                            <th>Stations</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="state-ranking-body">
+                        <tr>
+                            <td colspan="6">
+                                Loading state ranking...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="methodology">
+            <h2>About the data</h2>
+
+            <p>
+                Values represent prices observed at fuel stations
+                surveyed by ANP. They do not necessarily represent
+                every fuel station operating in each state.
+            </p>
+
+            <p>
+                Partial weeks are excluded from the main analyses.
+                Liquid fuels are measured per liter, while compressed
+                natural gas is measured per cubic meter.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                Source: Brazilian National Agency of Petroleum,
+                Natural Gas and Biofuels — ANP.
+            </p>
+        </div>
+    </footer>
+
+    <script src="./app.js"></script>
+</body>
+</html>

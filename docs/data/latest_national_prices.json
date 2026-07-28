@@ -1,0 +1,74 @@
+[
+  {
+    "week_start": "2026-06-22",
+    "week_end": "2026-06-28",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.094,
+    "median_price": 6.99,
+    "minimum_price": 5.69,
+    "maximum_price": 9.79,
+    "price_observations": 3024,
+    "station_count": 3024
+  },
+  {
+    "week_start": "2026-06-22",
+    "week_end": "2026-06-28",
+    "product": "GASOLINA ADITIVADA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.861,
+    "median_price": 6.85,
+    "minimum_price": 5.92,
+    "maximum_price": 9.89,
+    "price_observations": 3305,
+    "station_count": 3305
+  },
+  {
+    "week_start": "2026-06-22",
+    "week_end": "2026-06-28",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.831,
+    "median_price": 6.79,
+    "minimum_price": 5.59,
+    "maximum_price": 8.99,
+    "price_observations": 1797,
+    "station_count": 1797
+  },
+  {
+    "week_start": "2026-06-22",
+    "week_end": "2026-06-28",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.666,
+    "median_price": 6.64,
+    "minimum_price": 5.49,
+    "maximum_price": 9.69,
+    "price_observations": 4281,
+    "station_count": 4281
+  },
+  {
+    "week_start": "2026-06-22",
+    "week_end": "2026-06-28",
+    "product": "GNV",
+    "measurement_unit": "R$ / m³",
+    "average_price": 4.709,
+    "median_price": 4.69,
+    "minimum_price": 3.79,
+    "maximum_price": 6.49,
+    "price_observations": 332,
+    "station_count": 332
+  },
+  {
+    "week_start": "2026-06-22",
+    "week_end": "2026-06-28",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.415,
+    "median_price": 4.385,
+    "minimum_price": 2.99,
+    "maximum_price": 6.6,
+    "price_observations": 3632,
+    "station_count": 3632
+  }
+]

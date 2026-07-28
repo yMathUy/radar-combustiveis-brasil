@@ -1,0 +1,902 @@
+[
+  {
+    "week_start": "2026-01-05",
+    "week_end": "2026-01-11",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.098,
+    "price_observations": 1680,
+    "station_count": 1680
+  },
+  {
+    "week_start": "2026-01-05",
+    "week_end": "2026-01-11",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.152,
+    "price_observations": 2841,
+    "station_count": 2841
+  },
+  {
+    "week_start": "2026-01-05",
+    "week_end": "2026-01-11",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.648,
+    "price_observations": 3444,
+    "station_count": 3444
+  },
+  {
+    "week_start": "2026-01-05",
+    "week_end": "2026-01-11",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.297,
+    "price_observations": 4081,
+    "station_count": 4081
+  },
+  {
+    "week_start": "2026-01-12",
+    "week_end": "2026-01-18",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.11,
+    "price_observations": 1727,
+    "station_count": 1727
+  },
+  {
+    "week_start": "2026-01-12",
+    "week_end": "2026-01-18",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.164,
+    "price_observations": 2975,
+    "station_count": 2975
+  },
+  {
+    "week_start": "2026-01-12",
+    "week_end": "2026-01-18",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.7,
+    "price_observations": 3567,
+    "station_count": 3567
+  },
+  {
+    "week_start": "2026-01-12",
+    "week_end": "2026-01-18",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.33,
+    "price_observations": 4259,
+    "station_count": 4259
+  },
+  {
+    "week_start": "2026-01-19",
+    "week_end": "2026-01-25",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.112,
+    "price_observations": 1761,
+    "station_count": 1761
+  },
+  {
+    "week_start": "2026-01-19",
+    "week_end": "2026-01-25",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.171,
+    "price_observations": 2953,
+    "station_count": 2953
+  },
+  {
+    "week_start": "2026-01-19",
+    "week_end": "2026-01-25",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.736,
+    "price_observations": 3604,
+    "station_count": 3604
+  },
+  {
+    "week_start": "2026-01-19",
+    "week_end": "2026-01-25",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.337,
+    "price_observations": 4265,
+    "station_count": 4265
+  },
+  {
+    "week_start": "2026-01-26",
+    "week_end": "2026-02-01",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.1,
+    "price_observations": 1795,
+    "station_count": 1795
+  },
+  {
+    "week_start": "2026-01-26",
+    "week_end": "2026-02-01",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.159,
+    "price_observations": 3000,
+    "station_count": 3000
+  },
+  {
+    "week_start": "2026-01-26",
+    "week_end": "2026-02-01",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.752,
+    "price_observations": 3627,
+    "station_count": 3627
+  },
+  {
+    "week_start": "2026-01-26",
+    "week_end": "2026-02-01",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.335,
+    "price_observations": 4303,
+    "station_count": 4303
+  },
+  {
+    "week_start": "2026-02-02",
+    "week_end": "2026-02-08",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.103,
+    "price_observations": 1747,
+    "station_count": 1747
+  },
+  {
+    "week_start": "2026-02-02",
+    "week_end": "2026-02-08",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.166,
+    "price_observations": 2912,
+    "station_count": 2912
+  },
+  {
+    "week_start": "2026-02-02",
+    "week_end": "2026-02-08",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.762,
+    "price_observations": 3534,
+    "station_count": 3534
+  },
+  {
+    "week_start": "2026-02-02",
+    "week_end": "2026-02-08",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.322,
+    "price_observations": 4197,
+    "station_count": 4197
+  },
+  {
+    "week_start": "2026-02-09",
+    "week_end": "2026-02-15",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.098,
+    "price_observations": 1788,
+    "station_count": 1788
+  },
+  {
+    "week_start": "2026-02-09",
+    "week_end": "2026-02-15",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.157,
+    "price_observations": 2951,
+    "station_count": 2951
+  },
+  {
+    "week_start": "2026-02-09",
+    "week_end": "2026-02-15",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.772,
+    "price_observations": 3634,
+    "station_count": 3634
+  },
+  {
+    "week_start": "2026-02-09",
+    "week_end": "2026-02-15",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.314,
+    "price_observations": 4284,
+    "station_count": 4284
+  },
+  {
+    "week_start": "2026-02-16",
+    "week_end": "2026-02-22",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.094,
+    "price_observations": 1815,
+    "station_count": 1815
+  },
+  {
+    "week_start": "2026-02-16",
+    "week_end": "2026-02-22",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.148,
+    "price_observations": 2967,
+    "station_count": 2966
+  },
+  {
+    "week_start": "2026-02-16",
+    "week_end": "2026-02-22",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.772,
+    "price_observations": 3630,
+    "station_count": 3629
+  },
+  {
+    "week_start": "2026-02-16",
+    "week_end": "2026-02-22",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.311,
+    "price_observations": 4277,
+    "station_count": 4276
+  },
+  {
+    "week_start": "2026-02-23",
+    "week_end": "2026-03-01",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.086,
+    "price_observations": 1816,
+    "station_count": 1816
+  },
+  {
+    "week_start": "2026-02-23",
+    "week_end": "2026-03-01",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.139,
+    "price_observations": 3017,
+    "station_count": 3017
+  },
+  {
+    "week_start": "2026-02-23",
+    "week_end": "2026-03-01",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.766,
+    "price_observations": 3654,
+    "station_count": 3654
+  },
+  {
+    "week_start": "2026-02-23",
+    "week_end": "2026-03-01",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.3,
+    "price_observations": 4334,
+    "station_count": 4334
+  },
+  {
+    "week_start": "2026-03-02",
+    "week_end": "2026-03-08",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.132,
+    "price_observations": 1785,
+    "station_count": 1785
+  },
+  {
+    "week_start": "2026-03-02",
+    "week_end": "2026-03-08",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.184,
+    "price_observations": 2995,
+    "station_count": 2995
+  },
+  {
+    "week_start": "2026-03-02",
+    "week_end": "2026-03-08",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.757,
+    "price_observations": 3637,
+    "station_count": 3637
+  },
+  {
+    "week_start": "2026-03-02",
+    "week_end": "2026-03-08",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.307,
+    "price_observations": 4310,
+    "station_count": 4310
+  },
+  {
+    "week_start": "2026-03-09",
+    "week_end": "2026-03-15",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.808,
+    "price_observations": 1689,
+    "station_count": 1689
+  },
+  {
+    "week_start": "2026-03-09",
+    "week_end": "2026-03-15",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.864,
+    "price_observations": 2902,
+    "station_count": 2902
+  },
+  {
+    "week_start": "2026-03-09",
+    "week_end": "2026-03-15",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.836,
+    "price_observations": 3513,
+    "station_count": 3513
+  },
+  {
+    "week_start": "2026-03-09",
+    "week_end": "2026-03-15",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.482,
+    "price_observations": 4182,
+    "station_count": 4182
+  },
+  {
+    "week_start": "2026-03-16",
+    "week_end": "2026-03-22",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.284,
+    "price_observations": 1777,
+    "station_count": 1777
+  },
+  {
+    "week_start": "2026-03-16",
+    "week_end": "2026-03-22",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.343,
+    "price_observations": 2936,
+    "station_count": 2936
+  },
+  {
+    "week_start": "2026-03-16",
+    "week_end": "2026-03-22",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.894,
+    "price_observations": 3660,
+    "station_count": 3660
+  },
+  {
+    "week_start": "2026-03-16",
+    "week_end": "2026-03-22",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.668,
+    "price_observations": 4319,
+    "station_count": 4319
+  },
+  {
+    "week_start": "2026-03-23",
+    "week_end": "2026-03-29",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.487,
+    "price_observations": 1760,
+    "station_count": 1760
+  },
+  {
+    "week_start": "2026-03-23",
+    "week_end": "2026-03-29",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.572,
+    "price_observations": 3016,
+    "station_count": 3016
+  },
+  {
+    "week_start": "2026-03-23",
+    "week_end": "2026-03-29",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.93,
+    "price_observations": 3722,
+    "station_count": 3722
+  },
+  {
+    "week_start": "2026-03-23",
+    "week_end": "2026-03-29",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.809,
+    "price_observations": 4389,
+    "station_count": 4389
+  },
+  {
+    "week_start": "2026-03-30",
+    "week_end": "2026-04-05",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.497,
+    "price_observations": 1729,
+    "station_count": 1729
+  },
+  {
+    "week_start": "2026-03-30",
+    "week_end": "2026-04-05",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.584,
+    "price_observations": 2950,
+    "station_count": 2950
+  },
+  {
+    "week_start": "2026-03-30",
+    "week_end": "2026-04-05",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.915,
+    "price_observations": 3637,
+    "station_count": 3637
+  },
+  {
+    "week_start": "2026-03-30",
+    "week_end": "2026-04-05",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.798,
+    "price_observations": 4294,
+    "station_count": 4294
+  },
+  {
+    "week_start": "2026-04-06",
+    "week_end": "2026-04-12",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.472,
+    "price_observations": 1740,
+    "station_count": 1740
+  },
+  {
+    "week_start": "2026-04-06",
+    "week_end": "2026-04-12",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.584,
+    "price_observations": 2991,
+    "station_count": 2991
+  },
+  {
+    "week_start": "2026-04-06",
+    "week_end": "2026-04-12",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.907,
+    "price_observations": 3658,
+    "station_count": 3658
+  },
+  {
+    "week_start": "2026-04-06",
+    "week_end": "2026-04-12",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.795,
+    "price_observations": 4320,
+    "station_count": 4320
+  },
+  {
+    "week_start": "2026-04-13",
+    "week_end": "2026-04-19",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.385,
+    "price_observations": 1804,
+    "station_count": 1804
+  },
+  {
+    "week_start": "2026-04-13",
+    "week_end": "2026-04-19",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.52,
+    "price_observations": 3044,
+    "station_count": 3044
+  },
+  {
+    "week_start": "2026-04-13",
+    "week_end": "2026-04-19",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.904,
+    "price_observations": 3747,
+    "station_count": 3747
+  },
+  {
+    "week_start": "2026-04-13",
+    "week_end": "2026-04-19",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.784,
+    "price_observations": 4408,
+    "station_count": 4408
+  },
+  {
+    "week_start": "2026-04-20",
+    "week_end": "2026-04-26",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.276,
+    "price_observations": 1744,
+    "station_count": 1744
+  },
+  {
+    "week_start": "2026-04-20",
+    "week_end": "2026-04-26",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.411,
+    "price_observations": 2989,
+    "station_count": 2989
+  },
+  {
+    "week_start": "2026-04-20",
+    "week_end": "2026-04-26",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.859,
+    "price_observations": 3690,
+    "station_count": 3690
+  },
+  {
+    "week_start": "2026-04-20",
+    "week_end": "2026-04-26",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.748,
+    "price_observations": 4345,
+    "station_count": 4345
+  },
+  {
+    "week_start": "2026-04-27",
+    "week_end": "2026-05-03",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.17,
+    "price_observations": 1754,
+    "station_count": 1754
+  },
+  {
+    "week_start": "2026-04-27",
+    "week_end": "2026-05-03",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.304,
+    "price_observations": 2976,
+    "station_count": 2976
+  },
+  {
+    "week_start": "2026-04-27",
+    "week_end": "2026-05-03",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.788,
+    "price_observations": 3620,
+    "station_count": 3620
+  },
+  {
+    "week_start": "2026-04-27",
+    "week_end": "2026-05-03",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.706,
+    "price_observations": 4250,
+    "station_count": 4250
+  },
+  {
+    "week_start": "2026-05-04",
+    "week_end": "2026-05-10",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.11,
+    "price_observations": 1773,
+    "station_count": 1773
+  },
+  {
+    "week_start": "2026-05-04",
+    "week_end": "2026-05-10",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.263,
+    "price_observations": 2993,
+    "station_count": 2993
+  },
+  {
+    "week_start": "2026-05-04",
+    "week_end": "2026-05-10",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.704,
+    "price_observations": 3601,
+    "station_count": 3601
+  },
+  {
+    "week_start": "2026-05-04",
+    "week_end": "2026-05-10",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.697,
+    "price_observations": 4262,
+    "station_count": 4262
+  },
+  {
+    "week_start": "2026-05-11",
+    "week_end": "2026-05-17",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.064,
+    "price_observations": 1803,
+    "station_count": 1803
+  },
+  {
+    "week_start": "2026-05-11",
+    "week_end": "2026-05-17",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.226,
+    "price_observations": 3049,
+    "station_count": 3049
+  },
+  {
+    "week_start": "2026-05-11",
+    "week_end": "2026-05-17",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.644,
+    "price_observations": 3673,
+    "station_count": 3673
+  },
+  {
+    "week_start": "2026-05-11",
+    "week_end": "2026-05-17",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.689,
+    "price_observations": 4345,
+    "station_count": 4345
+  },
+  {
+    "week_start": "2026-05-18",
+    "week_end": "2026-05-24",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.004,
+    "price_observations": 1843,
+    "station_count": 1843
+  },
+  {
+    "week_start": "2026-05-18",
+    "week_end": "2026-05-24",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.192,
+    "price_observations": 3064,
+    "station_count": 3064
+  },
+  {
+    "week_start": "2026-05-18",
+    "week_end": "2026-05-24",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.58,
+    "price_observations": 3730,
+    "station_count": 3730
+  },
+  {
+    "week_start": "2026-05-18",
+    "week_end": "2026-05-24",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.668,
+    "price_observations": 4399,
+    "station_count": 4399
+  },
+  {
+    "week_start": "2026-05-25",
+    "week_end": "2026-05-31",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.978,
+    "price_observations": 1867,
+    "station_count": 1867
+  },
+  {
+    "week_start": "2026-05-25",
+    "week_end": "2026-05-31",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.175,
+    "price_observations": 3089,
+    "station_count": 3089
+  },
+  {
+    "week_start": "2026-05-25",
+    "week_end": "2026-05-31",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.525,
+    "price_observations": 3704,
+    "station_count": 3704
+  },
+  {
+    "week_start": "2026-05-25",
+    "week_end": "2026-05-31",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.657,
+    "price_observations": 4397,
+    "station_count": 4397
+  },
+  {
+    "week_start": "2026-06-01",
+    "week_end": "2026-06-07",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.93,
+    "price_observations": 1857,
+    "station_count": 1857
+  },
+  {
+    "week_start": "2026-06-01",
+    "week_end": "2026-06-07",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.149,
+    "price_observations": 3124,
+    "station_count": 3124
+  },
+  {
+    "week_start": "2026-06-01",
+    "week_end": "2026-06-07",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.494,
+    "price_observations": 3792,
+    "station_count": 3792
+  },
+  {
+    "week_start": "2026-06-01",
+    "week_end": "2026-06-07",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.648,
+    "price_observations": 4431,
+    "station_count": 4431
+  },
+  {
+    "week_start": "2026-06-08",
+    "week_end": "2026-06-14",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.896,
+    "price_observations": 1786,
+    "station_count": 1786
+  },
+  {
+    "week_start": "2026-06-08",
+    "week_end": "2026-06-14",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.136,
+    "price_observations": 3029,
+    "station_count": 3029
+  },
+  {
+    "week_start": "2026-06-08",
+    "week_end": "2026-06-14",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.472,
+    "price_observations": 3673,
+    "station_count": 3673
+  },
+  {
+    "week_start": "2026-06-08",
+    "week_end": "2026-06-14",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.657,
+    "price_observations": 4335,
+    "station_count": 4335
+  },
+  {
+    "week_start": "2026-06-15",
+    "week_end": "2026-06-21",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.883,
+    "price_observations": 1801,
+    "station_count": 1801
+  },
+  {
+    "week_start": "2026-06-15",
+    "week_end": "2026-06-21",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.134,
+    "price_observations": 3042,
+    "station_count": 3042
+  },
+  {
+    "week_start": "2026-06-15",
+    "week_end": "2026-06-21",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.45,
+    "price_observations": 3685,
+    "station_count": 3685
+  },
+  {
+    "week_start": "2026-06-15",
+    "week_end": "2026-06-21",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.669,
+    "price_observations": 4328,
+    "station_count": 4328
+  },
+  {
+    "week_start": "2026-06-22",
+    "week_end": "2026-06-28",
+    "product": "DIESEL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.831,
+    "price_observations": 1797,
+    "station_count": 1797
+  },
+  {
+    "week_start": "2026-06-22",
+    "week_end": "2026-06-28",
+    "product": "DIESEL S10",
+    "measurement_unit": "R$ / litro",
+    "average_price": 7.094,
+    "price_observations": 3024,
+    "station_count": 3024
+  },
+  {
+    "week_start": "2026-06-22",
+    "week_end": "2026-06-28",
+    "product": "ETANOL",
+    "measurement_unit": "R$ / litro",
+    "average_price": 4.415,
+    "price_observations": 3632,
+    "station_count": 3632
+  },
+  {
+    "week_start": "2026-06-22",
+    "week_end": "2026-06-28",
+    "product": "GASOLINA",
+    "measurement_unit": "R$ / litro",
+    "average_price": 6.666,
+    "price_observations": 4281,
+    "station_count": 4281
+  }
+]
