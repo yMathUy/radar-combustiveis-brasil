@@ -69,6 +69,56 @@
                 <p>Loading prices...</p>
             </div>
         </section>
+        <section class="dashboard-section">
+    <div class="section-heading">
+        <div>
+            <p class="section-label">Weekly trends</p>
+
+            <h2>National price evolution</h2>
+        </div>
+
+        <p>
+            Average prices per liter during complete reporting weeks.
+        </p>
+    </div>
+
+    <div class="chart-panel">
+        <div
+            id="trend-legend"
+            class="chart-legend"
+            aria-label="Chart legend"
+        ></div>
+
+        <div class="chart-wrapper">
+            <svg
+                id="trend-chart"
+                class="trend-chart"
+                role="img"
+                aria-labelledby="trend-chart-title trend-chart-description"
+            >
+                <title id="trend-chart-title">
+                    Weekly national fuel price trends
+                </title>
+
+                <desc id="trend-chart-description">
+                    Line chart comparing weekly average gasoline,
+                    ethanol, diesel and diesel S10 prices in Brazil.
+                </desc>
+            </svg>
+        </div>
+
+        <p class="chart-note">
+            Partial weeks are excluded. Hover or focus on a point
+            to inspect its weekly average price.
+        </p>
+
+        <div
+            id="chart-tooltip"
+            class="chart-tooltip"
+            hidden
+        ></div>
+    </div>
+</section>
 
         <section class="dashboard-section">
             <div class="section-heading">

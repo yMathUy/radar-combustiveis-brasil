@@ -2,6 +2,7 @@ const DATA_PATHS = {
     metadata: "./data/metadata.json",
     nationalPrices: "./data/latest_national_prices.json",
     statePrices: "./data/latest_state_gasoline_prices.json",
+    nationalTrends: "./data/weekly_national_trends.json",
 };
 
 
@@ -254,6 +255,373 @@ function renderMetadata(metadata) {
     );
 }
 
+const SVG_NAMESPACE = "http://www.w3.org/2000/svg";
+
+const CHART_SERIES = [
+    {
+        product: "GASOLINA",
+        label: "Gasoline",
+        color: "#176b87",
+    },
+    {
+        product: "ETANOL",
+        label: "Ethanol",
+        color: "#2f855a",
+    },
+    {
+        product: "DIESEL",
+        label: "Diesel",
+        color: "#b7791f",
+    },
+    {
+        product: "DIESEL S10",
+        label: "Diesel S10",
+        color: "#805ad5",
+    },
+];
+
+
+function createSvgElement(tagName, attributes = {}) {
+    const element = document.createElementNS(
+        SVG_NAMESPACE,
+        tagName
+    );
+
+    Object.entries(attributes).forEach(([name, value]) => {
+        element.setAttribute(name, String(value));
+    });
+
+    return element;
+}
+
+
+function groupTrendsByProduct(records) {
+    return CHART_SERIES.map((series) => ({
+        ...series,
+        values: records
+            .filter(
+                (record) => record.product === series.product
+            )
+            .sort(
+                (first, second) => (
+                    first.week_start.localeCompare(
+                        second.week_start
+                    )
+                )
+            ),
+    }));
+}
+
+
+function renderTrendLegend(seriesList) {
+    const legend = document.querySelector("#trend-legend");
+
+    legend.replaceChildren();
+
+    seriesList.forEach((series) => {
+        const item = document.createElement("span");
+
+        item.className = "legend-item";
+
+        item.innerHTML = `
+            <span
+                class="legend-marker"
+                style="background: ${series.color}"
+                aria-hidden="true"
+            ></span>
+
+            ${series.label}
+        `;
+
+        legend.appendChild(item);
+    });
+}
+
+
+function showChartTooltip(event, series, record) {
+    const tooltip = document.querySelector("#chart-tooltip");
+
+    tooltip.innerHTML = `
+        <strong>${series.label}</strong><br>
+        Week starting ${formatDate(record.week_start)}<br>
+        Average: ${currencyFormatter.format(
+            record.average_price
+        )} per liter
+    `;
+
+    tooltip.hidden = false;
+
+    const horizontalOffset = 14;
+    const verticalOffset = 14;
+
+    tooltip.style.left = (
+        `${event.clientX + horizontalOffset}px`
+    );
+
+    tooltip.style.top = (
+        `${event.clientY + verticalOffset}px`
+    );
+}
+
+
+function hideChartTooltip() {
+    document.querySelector("#chart-tooltip").hidden = true;
+}
+
+
+function renderTrendChart(records) {
+    const svg = document.querySelector("#trend-chart");
+
+    if (!Array.isArray(records) || records.length === 0) {
+        svg.replaceChildren();
+
+        const message = createSvgElement("text", {
+            x: 400,
+            y: 180,
+            "text-anchor": "middle",
+            class: "chart-error",
+        });
+
+        message.textContent = "No weekly trend records were found.";
+
+        svg.setAttribute("viewBox", "0 0 800 360");
+        svg.appendChild(message);
+
+        return;
+    }
+
+    const width = 1100;
+    const height = 520;
+
+    const margin = {
+        top: 24,
+        right: 34,
+        bottom: 72,
+        left: 74,
+    };
+
+    const plotWidth = width - margin.left - margin.right;
+    const plotHeight = height - margin.top - margin.bottom;
+
+    const seriesList = groupTrendsByProduct(records);
+
+    const dates = [
+        ...new Set(
+            records.map((record) => record.week_start)
+        ),
+    ].sort();
+
+    const prices = records.map(
+        (record) => Number(record.average_price)
+    );
+
+    const minimumPrice = Math.floor(
+        Math.min(...prices) * 2
+    ) / 2;
+
+    const maximumPrice = Math.ceil(
+        Math.max(...prices) * 2
+    ) / 2;
+
+    const xPosition = (date) => {
+        const index = dates.indexOf(date);
+
+        if (dates.length === 1) {
+            return margin.left + plotWidth / 2;
+        }
+
+        return (
+            margin.left
+            + (index / (dates.length - 1)) * plotWidth
+        );
+    };
+
+    const yPosition = (price) => (
+        margin.top
+        + (
+            (maximumPrice - price)
+            / (maximumPrice - minimumPrice)
+        ) * plotHeight
+    );
+
+    svg.replaceChildren();
+    svg.setAttribute(
+        "viewBox",
+        `0 0 ${width} ${height}`
+    );
+
+    const verticalTicks = 6;
+
+    for (
+        let tickIndex = 0;
+        tickIndex <= verticalTicks;
+        tickIndex += 1
+    ) {
+        const ratio = tickIndex / verticalTicks;
+
+        const price = (
+            maximumPrice
+            - ratio * (maximumPrice - minimumPrice)
+        );
+
+        const y = (
+            margin.top
+            + ratio * plotHeight
+        );
+
+        const gridLine = createSvgElement("line", {
+            x1: margin.left,
+            y1: y,
+            x2: width - margin.right,
+            y2: y,
+            class: "chart-grid-line",
+        });
+
+        const label = createSvgElement("text", {
+            x: margin.left - 12,
+            y: y + 4,
+            "text-anchor": "end",
+            class: "chart-axis-label",
+        });
+
+        label.textContent = currencyFormatter.format(price);
+
+        svg.appendChild(gridLine);
+        svg.appendChild(label);
+    }
+
+    const horizontalAxis = createSvgElement("line", {
+        x1: margin.left,
+        y1: height - margin.bottom,
+        x2: width - margin.right,
+        y2: height - margin.bottom,
+        class: "chart-axis-line",
+    });
+
+    svg.appendChild(horizontalAxis);
+
+    const dateStep = Math.max(
+        1,
+        Math.ceil(dates.length / 8)
+    );
+
+    dates.forEach((date, index) => {
+        if (
+            index % dateStep !== 0
+            && index !== dates.length - 1
+        ) {
+            return;
+        }
+
+        const x = xPosition(date);
+
+        const label = createSvgElement("text", {
+            x,
+            y: height - margin.bottom + 28,
+            "text-anchor": "middle",
+            class: "chart-axis-label",
+        });
+
+        label.textContent = formatDate(date);
+
+        svg.appendChild(label);
+    });
+
+    seriesList.forEach((series) => {
+        const pathData = series.values
+            .map((record, index) => {
+                const command = index === 0 ? "M" : "L";
+
+                return (
+                    `${command} `
+                    + `${xPosition(record.week_start)} `
+                    + `${yPosition(record.average_price)}`
+                );
+            })
+            .join(" ");
+
+        const path = createSvgElement("path", {
+            d: pathData,
+            stroke: series.color,
+            class: "chart-series-line",
+        });
+
+        svg.appendChild(path);
+
+        series.values.forEach((record) => {
+            const point = createSvgElement("circle", {
+                cx: xPosition(record.week_start),
+                cy: yPosition(record.average_price),
+                r: 4,
+                fill: series.color,
+                class: "chart-point",
+                tabindex: 0,
+                role: "button",
+                "aria-label": (
+                    `${series.label}, `
+                    + `${formatDate(record.week_start)}, `
+                    + `${currencyFormatter.format(
+                        record.average_price
+                    )} per liter`
+                ),
+            });
+
+            point.addEventListener(
+                "mouseenter",
+                (event) => {
+                    showChartTooltip(
+                        event,
+                        series,
+                        record
+                    );
+                }
+            );
+
+            point.addEventListener(
+                "mousemove",
+                (event) => {
+                    showChartTooltip(
+                        event,
+                        series,
+                        record
+                    );
+                }
+            );
+
+            point.addEventListener(
+                "mouseleave",
+                hideChartTooltip
+            );
+
+            point.addEventListener(
+                "focus",
+                (event) => {
+                    const bounds = (
+                        event.target.getBoundingClientRect()
+                    );
+
+                    showChartTooltip(
+                        {
+                            clientX: bounds.left,
+                            clientY: bounds.top,
+                        },
+                        series,
+                        record
+                    );
+                }
+            );
+
+            point.addEventListener(
+                "blur",
+                hideChartTooltip
+            );
+
+            svg.appendChild(point);
+        });
+    });
+
+    renderTrendLegend(seriesList);
+}
 
 function renderError(error) {
     console.error(error);
@@ -293,18 +661,21 @@ function renderError(error) {
 async function initializeDashboard() {
     try {
         const [
-            metadata,
-            nationalPrices,
-            statePrices,
-        ] = await Promise.all([
-            fetchJson(DATA_PATHS.metadata),
-            fetchJson(DATA_PATHS.nationalPrices),
-            fetchJson(DATA_PATHS.statePrices),
-        ]);
+    metadata,
+    nationalPrices,
+    statePrices,
+    nationalTrends,
+] = await Promise.all([
+    fetchJson(DATA_PATHS.metadata),
+    fetchJson(DATA_PATHS.nationalPrices),
+    fetchJson(DATA_PATHS.statePrices),
+    fetchJson(DATA_PATHS.nationalTrends),
+]);
 
         renderMetadata(metadata);
         renderPriceCards(nationalPrices);
         renderStateRanking(statePrices);
+        renderTrendChart(nationalTrends);
     } catch (error) {
         renderError(error);
     }
