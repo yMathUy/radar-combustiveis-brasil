@@ -47,8 +47,28 @@ jobs:
           python -m pip install pandas requests
 
       - name: Download ANP data
+        shell: bash
         run: |
-          python src/download.py
+          maximum_attempts=4
+
+          for attempt in $(seq 1 "$maximum_attempts"); do
+            echo "Download attempt $attempt of $maximum_attempts"
+
+            if python src/download.py; then
+              echo "ANP data downloaded successfully."
+              exit 0
+            fi
+
+            if [ "$attempt" -eq "$maximum_attempts" ]; then
+              echo "ANP download failed after $maximum_attempts attempts."
+              exit 1
+            fi
+
+            wait_seconds=$((attempt * 60))
+
+            echo "Waiting $wait_seconds seconds before retrying..."
+            sleep "$wait_seconds"
+          done
 
       - name: Clean ANP data
         run: |
